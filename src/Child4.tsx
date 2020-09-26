@@ -1,7 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { memo, useState, useContext } from "react";
 import AppStateContext from "./AppContext";
 
-export default function () {
+export default memo(() => {
   const dispatch = useContext(AppStateContext.dispatch);
   const [state, setState] = useState(new Date().getUTCMilliseconds());
 
@@ -18,4 +18,4 @@ export default function () {
       </button>
     </div>
   );
-}
+});

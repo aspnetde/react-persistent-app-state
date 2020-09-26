@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
 import Child3 from "./Child3";
 import AppStateContext from "./AppContext";
 
-export default function () {
+export default memo(() => {
   const state = useContext(AppStateContext.state);
   const dispatch = useContext(AppStateContext.dispatch);
 
@@ -19,4 +19,4 @@ export default function () {
       <Child3 key="Child 3" />
     </div>
   );
-}
+});
