@@ -7,9 +7,9 @@ export default function () {
 
   return (
     <div>
-      Child 3. Rendered: {new Date().getUTCMilliseconds()}. &nbsp;{" "}
+      Child 3. Rendered at: {new Date().getUTCMilliseconds()}. &nbsp;
       <button onClick={() => dispatch({ type: "ResetComponentMsg" })}>
-        Reset
+        Global: Reset
       </button>
       <hr />
       <Child4 />

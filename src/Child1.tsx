@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import Child2 from "./Child2";
 import AppStateContext from "./AppContext";
 
@@ -6,22 +6,14 @@ export default function () {
   const state = useContext(AppStateContext.state);
   const dispatch = useContext(AppStateContext.dispatch);
 
-  const renderTime = useMemo(
-    () =>
-      new Date().getUTCMilliseconds() +
-      ". Selected: (" +
-      state.selectedComponent +
-      "). ",
-    [state]
-  );
-
   return (
     <div>
-      Child 1. Rendered: {renderTime}
+      Child 1. Rendered at: {new Date().getUTCMilliseconds()}. Selected
+      component: {state.selectedComponent}. &nbsp;
       <button
         onClick={() => dispatch({ type: "SelectComponentMsg", component: "1" })}
       >
-        Select me.
+        Global: Select 1
       </button>
       <hr />
       <Child2 key="Child 2" />

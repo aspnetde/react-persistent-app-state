@@ -7,13 +7,14 @@ export default function () {
 
   return (
     <div>
-      Child 4. Local state: {state} &nbsp;
+      Child 4. Rendered at: {new Date().getUTCMilliseconds()}. &nbsp; Local
+      state: {state} &nbsp;
       <button onClick={() => setState(new Date().getUTCMilliseconds())}>
-        Reset local state
+        Local: Reset
       </button>
       &nbsp;
       <button onClick={() => dispatch({ type: "ResetComponentMsg" })}>
-        Reset global state
+        Global: Reset
       </button>
     </div>
   );
